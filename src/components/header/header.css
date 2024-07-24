@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  width: calc(100% - 32px);
+  height: 84px;
+  padding: 16px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+
+  .header-icon {
+    cursor: pointer;
+  }
+
+  svg {
+    cursor: pointer;
+  }
+}

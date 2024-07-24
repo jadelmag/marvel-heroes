@@ -1,0 +1,17 @@
+.heart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .total {
+    margin-left: 8px !important;
+  }
+
+  svg {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}

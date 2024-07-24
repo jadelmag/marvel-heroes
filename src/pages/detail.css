@@ -1,0 +1,49 @@
+.detail-page {
+  display: block;
+  background-color: #000;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  .detail-page-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 16px;
+
+    span {
+      font-weight: 700 !important;
+      font-size: 32px !important;
+      line-height: 37.5px;
+      color: #fff !important;
+    }
+
+    svg {
+      position: relative;
+      width: 24px;
+      height: 24px;
+      bottom: 0px;
+      right: 0px;
+    }
+  }
+
+  .detail-page-description {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 18.75px;
+    color: #fff !important;
+    padding: 0px 16px 48px 16px;
+  }
+
+  svg {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    bottom: -1px;
+    right: -1px;
+  }
+}
