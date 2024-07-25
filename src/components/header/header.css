@@ -7,6 +7,10 @@ header {
   justify-content: space-between;
   background-color: #000;
 
+  button {
+    all: unset;
+  }
+
   .header-icon {
     cursor: pointer;
   }

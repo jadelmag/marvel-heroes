@@ -5,7 +5,7 @@ export interface SearchBoxProps {
   total: number;
 }
 
-const SearchBox: React.FC<SearchBoxProps> = ({ total = 0 }) => {
+const SearchBox: React.FC<SearchBoxProps> = ({ total }) => {
   return (
     <div className="search-box">
       <SearchInput type="text" placeholder="Search a character..." />

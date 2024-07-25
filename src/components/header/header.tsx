@@ -15,9 +15,9 @@ const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header>
-      <div className="header-icon" role="none" onClick={onHandleInit}>
+      <button className="header-icon" onClick={onHandleInit}>
         <HeaderIcon />
-      </div>
+      </button>
       <Heart />
     </header>
   );

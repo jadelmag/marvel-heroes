@@ -62,14 +62,12 @@ export default defineConfig({
       reportsDirectory: "coverage", // Directorio donde se guardarán los reportes
       exclude: [
         "**/main.tsx",
-        "**/stories/**",
+        "**/vite.config.ts",
         "**/*.cjs",
-        "**/.storybook/*.ts",
-        "**/.storybook/*.tsx",
         "**/coverge/**",
-        "**/demo/**",
         "**/mocks/**",
         "**/constants/**",
+        "**/modules/**",
       ], // Excluye los archivos con extensión .stories.ts del coverage
     },
   },

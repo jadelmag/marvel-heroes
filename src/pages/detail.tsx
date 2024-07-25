@@ -5,7 +5,6 @@ import "./detail.css";
 
 const DetailPage = () => {
   const { state } = useLocation();
-  console.log("state: ", state);
 
   return (
     <div className="detail-page">

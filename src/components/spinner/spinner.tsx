@@ -2,7 +2,7 @@ import "./spinner.css";
 
 const Spinner = () => {
   return (
-    <div className="spinner">
+    <div role="none" className="spinner">
       <div className="loader" />
     </div>
   );

@@ -3,50 +3,28 @@ import SearchBox from "@/components/search-box/search-box";
 import Spinner from "@/components/spinner/spinner";
 import { useHeroes } from "@/contexts/heroContext";
 import { useLoader } from "@/contexts/loaderContext";
+import { createURL } from "@/functions/url.functions";
 import { Hero } from "@/modules/hero/hero.interface";
-// import { heroService } from "@/modules/hero/hero.service";
-// import { createURL } from "@/utils/url.functions";
-// import { useEffect } from "react";
+import { heroService } from "@/modules/hero/hero.service";
+import { useEffect } from "react";
 
 const MainPage = () => {
   const { loading, setLoading } = useLoader();
   const { heroes, setHeroes } = useHeroes();
 
-  // useEffect(() => {
-  //   const load50Heroes = async () => {
-  //     setHeroes([]);
-  //     setLoading(true);
-  //     const url = createURL(null);
-  //     const heroes = await heroService.getHeroes(url);
-  //     setHeroes(heroes);
-  //     setLoading(false);
-  //   };
-  //   if (!loading) {
-  //     load50Heroes();
-  //   }
-  // }, []);
-
-  const items =
-    heroes.length > 0
-      ? heroes
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-          .concat(heroes)
-      : [];
+  useEffect(() => {
+    const load50Heroes = async () => {
+      setHeroes([]);
+      setLoading(true);
+      const url = createURL(null);
+      const heroes = await heroService.getHeroes(url);
+      setHeroes(heroes);
+      setLoading(false);
+    };
+    if (!loading) {
+      load50Heroes();
+    }
+  }, []);
 
   return (
     <div className="marvel-body">
@@ -55,7 +33,7 @@ const MainPage = () => {
       <div className="hero-list">
         {!loading &&
           heroes.length > 0 &&
-          items.map((hero: Hero) => {
+          heroes.map((hero: Hero) => {
             const picture = `${hero.thumbnail.path}.${hero.thumbnail.extension}`;
             return (
               <div key={hero.id} className="hero-column">

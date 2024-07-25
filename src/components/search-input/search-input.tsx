@@ -1,8 +1,8 @@
 import SearchIcon from "@/assets/svg/icon-search.svg";
 import { useHeroes } from "@/contexts/heroContext";
 import { useLoader } from "@/contexts/loaderContext";
+import { createURL } from "@/functions/url.functions";
 import { heroService } from "@/modules/hero/hero.service";
-import { createURL } from "@/utils/url.functions";
 import { useState } from "react";
 import "./search-input.css";
 
@@ -11,7 +11,7 @@ export interface SearchInputProps {
   placeholder?: string;
 }
 
-const SearchInput = ({ type = "text", placeholder = "" }) => {
+const SearchInput = ({ type = "text", placeholder = "" }: SearchInputProps) => {
   const { setHeroes } = useHeroes();
   const { loading, setLoading } = useLoader();
   const [searchValue, setSearchValue] = useState<string>("");

@@ -36,7 +36,7 @@ const Heart: React.FC<HeartProps> = ({ id, name, picture, description }) => {
   };
 
   return (
-    <div className="heart" role="none" onClick={onHandleClick}>
+    <button className="heart" onClick={onHandleClick}>
       {name ? <span>{name}</span> : null}
       {favs.length === 0 ? (
         <DisabledHeartIcon />
@@ -48,7 +48,7 @@ const Heart: React.FC<HeartProps> = ({ id, name, picture, description }) => {
           )}
         </>
       )}
-    </div>
+    </button>
   );
 };
 
