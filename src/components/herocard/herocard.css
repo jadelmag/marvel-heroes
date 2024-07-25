@@ -22,6 +22,11 @@
       padding: 16px 16px 24px 16px;
 
       .heart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
         svg {
           width: 12px;
           height: 12px;
@@ -35,7 +40,7 @@
     svg {
       position: absolute;
       bottom: -6px;
-      right: 0px;
+      right: -1px;
     }
   }
 }

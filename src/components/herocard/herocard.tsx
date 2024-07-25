@@ -34,7 +34,6 @@ const HeroCard: React.FC<HeroCardProps> = ({
       />
       <div className="hero-card-bottom">
         <div className="hero-card-content">
-          <span>{name}</span>
           <Heart
             id={id}
             name={name}
