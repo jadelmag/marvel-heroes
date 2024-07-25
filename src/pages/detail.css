@@ -26,10 +26,15 @@
         flex-direction: column;
         margin-left: 48px;
 
+        button {
+          all: unset;
+        }
+
         .heart {
           display: flex;
           align-items: center;
           justify-content: space-between;
+          width: 100%;
 
           span {
             font-weight: 700 !important;
@@ -91,10 +96,15 @@
         flex-direction: column;
         padding: 0px 48px;
 
+        button {
+          all: unset;
+        }
+
         .heart {
           display: flex;
           align-items: center;
           justify-content: space-between;
+          width: 100%;
 
           span {
             font-weight: 700 !important;
@@ -152,11 +162,16 @@
         height: 100%;
         padding: 24px 16px;
 
+        button {
+          all: unset;
+        }
+
         .heart {
           display: flex;
           align-items: center;
           justify-content: space-between;
           margin-bottom: 24px;
+          width: 100%;
 
           span {
             font-weight: 700 !important;

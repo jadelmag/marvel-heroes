@@ -21,7 +21,7 @@ const MainPage = () => {
       setHeroes(heroes);
       setLoading(false);
     };
-    if (!loading) {
+    if (!loading && heroes.length === 0) {
       load50Heroes();
     }
   }, []);

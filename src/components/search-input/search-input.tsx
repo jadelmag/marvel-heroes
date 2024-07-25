@@ -13,7 +13,7 @@ export interface SearchInputProps {
 
 const SearchInput = ({ type = "text", placeholder = "" }: SearchInputProps) => {
   const { setHeroes } = useHeroes();
-  const { loading, setLoading } = useLoader();
+  const { setLoading } = useLoader();
   const [searchValue, setSearchValue] = useState<string>("");
 
   const onHandleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -40,7 +40,6 @@ const SearchInput = ({ type = "text", placeholder = "" }: SearchInputProps) => {
       <SearchIcon />
       <input
         type={type}
-        disabled={loading}
         placeholder={placeholder}
         value={searchValue}
         onChange={onHandleSearch}

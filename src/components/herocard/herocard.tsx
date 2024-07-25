@@ -24,7 +24,7 @@ const HeroCard: React.FC<HeroCardProps> = ({
   };
 
   return (
-    <div id={`${id}`} className="hero-card">
+    <div className="hero-card">
       <img
         role="none"
         className="hero-picture"

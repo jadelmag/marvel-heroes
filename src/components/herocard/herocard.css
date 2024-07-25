@@ -21,6 +21,10 @@
       justify-content: space-between;
       padding: 16px 16px 24px 16px;
 
+      button {
+        all: unset;
+      }
+
       .heart {
         display: flex;
         align-items: center;

@@ -68,6 +68,7 @@ export default defineConfig({
         "**/mocks/**",
         "**/constants/**",
         "**/modules/**",
+        "**/cypress/**",
       ], // Excluye los archivos con extensión .stories.ts del coverage
     },
   },

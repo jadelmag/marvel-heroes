@@ -17,15 +17,17 @@ const Heart: React.FC<HeartProps> = ({ id, name, picture, description }) => {
   const navigate = useNavigate();
 
   const onHandleClick = () => {
-    if (id && name && picture && description) {
+    if (id && name && picture) {
       const favHero: FavHero = {
         id: id,
         name: name,
         picture: picture,
-        description: description,
+        description: description!,
       };
-      if (favs.length === 0) {
-        setFavs([favHero]);
+      const index = favs.findIndex((f: FavHero) => f.id === id);
+      if (index === -1) {
+        const allFavs = favs.concat(favHero);
+        setFavs(allFavs);
       } else {
         const filtered = favs.filter((fav: FavHero) => fav.id !== favHero.id);
         setFavs(filtered);
@@ -35,14 +37,24 @@ const Heart: React.FC<HeartProps> = ({ id, name, picture, description }) => {
     }
   };
 
+  const ids = favs.map((f: FavHero) => f.id);
+
   return (
-    <button className="heart" onClick={onHandleClick}>
+    <button
+      id={`fav-button-${name?.trim()}`}
+      className="heart"
+      onClick={onHandleClick}
+    >
       {name ? <span>{name}</span> : null}
-      {favs.length === 0 ? (
-        <DisabledHeartIcon />
-      ) : (
+      {favs.length === 0 && <DisabledHeartIcon />}
+      {favs.length > 0 && (
         <>
-          <HeartIcon />
+          {id !== undefined && !ids.includes(id) ? (
+            <DisabledHeartIcon />
+          ) : (
+            <HeartIcon />
+          )}
+
           {!id && !name && !picture && !description && (
             <span className="total">{favs.length}</span>
           )}
