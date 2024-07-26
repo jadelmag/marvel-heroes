@@ -6,7 +6,7 @@ import { describe, expect, it } from "vitest";
 
 describe("Router Configuration", () => {
   it("should render MainPage and Header for the MAIN route", () => {
-    const router = createMemoryRouter(routes, { initialEntries: ["/"] });
+    const router = createMemoryRouter(routes, { initialEntries: [ROUTE.MAIN] });
     render(<RouterProvider router={router} />);
     const defaultItems = screen.getByText("0 Results");
     expect(defaultItems).toBeInTheDocument();
@@ -29,6 +29,7 @@ describe("Router Configuration", () => {
             name: "Hero",
             description: "Description Hero",
             picture: "Picture Hero",
+            comics: null,
           },
         },
       ],

@@ -1,6 +1,6 @@
 import { HeroDTO } from "@/modules/hero/hero.dto";
 import { Hero } from "@/modules/hero/hero.interface";
-import { Response } from "@/modules/hero/result.interface";
+import { Response } from "@/modules/hero/hero.response.interface";
 import { http } from "@/modules/http";
 
 export const heroRepository = {

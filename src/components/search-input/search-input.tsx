@@ -1,8 +1,6 @@
 import SearchIcon from "@/assets/svg/icon-search.svg";
-import { useHeroes } from "@/contexts/heroContext";
-import { useLoader } from "@/contexts/loaderContext";
 import { createURL } from "@/functions/url.functions";
-import { heroService } from "@/modules/hero/hero.service";
+import { useFindHero } from "@/hooks/useFindHero";
 import { useState } from "react";
 import "./search-input.css";
 
@@ -12,8 +10,7 @@ export interface SearchInputProps {
 }
 
 const SearchInput = ({ type = "text", placeholder = "" }: SearchInputProps) => {
-  const { setHeroes } = useHeroes();
-  const { setLoading } = useLoader();
+  const { fetchFindHero } = useFindHero();
   const [searchValue, setSearchValue] = useState<string>("");
 
   const onHandleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,12 +23,8 @@ const SearchInput = ({ type = "text", placeholder = "" }: SearchInputProps) => {
   ) => {
     event.preventDefault();
     if (event.key === "Enter") {
-      setHeroes([]);
-      setLoading(true);
       const url = createURL(searchValue);
-      const heroes = await heroService.getHeroes(url);
-      setHeroes(heroes);
-      setLoading(false);
+      fetchFindHero(url);
     }
   };
 

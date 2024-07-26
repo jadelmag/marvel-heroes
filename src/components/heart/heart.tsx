@@ -2,17 +2,24 @@ import DisabledHeartIcon from "@/assets/svg/icon-heart--disabled.svg";
 import HeartIcon from "@/assets/svg/icon-heart.svg";
 import { ROUTE } from "@/constants/paths.constants";
 import { FavHero, useFavs } from "@/contexts/favContext";
+import { Comics } from "@/modules/hero/hero.interface";
 import { useNavigate } from "react-router-dom";
 import "./heart.css";
-
 export interface HeartProps {
   id?: number;
   name?: string;
   picture?: string;
   description?: string;
+  comics: Comics;
 }
 
-const Heart: React.FC<HeartProps> = ({ id, name, picture, description }) => {
+const Heart: React.FC<HeartProps> = ({
+  id,
+  name,
+  picture,
+  description,
+  comics,
+}) => {
   const { favs, setFavs } = useFavs();
   const navigate = useNavigate();
 
@@ -22,7 +29,8 @@ const Heart: React.FC<HeartProps> = ({ id, name, picture, description }) => {
         id: id,
         name: name,
         picture: picture,
-        description: description!,
+        description: description ?? "",
+        comics: comics,
       };
       const index = favs.findIndex((f: FavHero) => f.id === id);
       if (index === -1) {

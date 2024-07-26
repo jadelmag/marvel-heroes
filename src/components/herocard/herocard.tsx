@@ -1,6 +1,7 @@
 import CutIcon from "@/assets/svg/icon-cut.svg";
 import Heart from "@/components/heart/heart";
 import { ROUTE } from "@/constants/paths.constants";
+import { Comics } from "@/modules/hero/hero.interface";
 import { useNavigate } from "react-router-dom";
 import "./herocard.css";
 
@@ -9,6 +10,7 @@ export interface HeroCardProps {
   name: string;
   picture: string;
   description: string;
+  comics: Comics;
 }
 
 const HeroCard: React.FC<HeroCardProps> = ({
@@ -16,11 +18,14 @@ const HeroCard: React.FC<HeroCardProps> = ({
   name,
   picture,
   description,
+  comics,
 }) => {
   const navigate = useNavigate();
 
   const onHandleRedirect = () => {
-    navigate(ROUTE.DETAIL, { state: { id, name, picture, description } });
+    navigate(ROUTE.DETAIL, {
+      state: { id, name, picture, description, comics },
+    });
   };
 
   return (
@@ -39,6 +44,7 @@ const HeroCard: React.FC<HeroCardProps> = ({
             name={name}
             picture={picture}
             description={description}
+            comics={comics}
           />
         </div>
         <CutIcon />

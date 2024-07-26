@@ -1,30 +1,11 @@
 import HeroCard from "@/components/herocard/herocard";
 import SearchBox from "@/components/search-box/search-box";
 import Spinner from "@/components/spinner/spinner";
-import { useHeroes } from "@/contexts/heroContext";
-import { useLoader } from "@/contexts/loaderContext";
-import { createURL } from "@/functions/url.functions";
+import { useLoadInitHeroes } from "@/hooks/useLoadInitHeroes";
 import { Hero } from "@/modules/hero/hero.interface";
-import { heroService } from "@/modules/hero/hero.service";
-import { useEffect } from "react";
 
 const MainPage = () => {
-  const { loading, setLoading } = useLoader();
-  const { heroes, setHeroes } = useHeroes();
-
-  useEffect(() => {
-    const load50Heroes = async () => {
-      setHeroes([]);
-      setLoading(true);
-      const url = createURL(null);
-      const heroes = await heroService.getHeroes(url);
-      setHeroes(heroes);
-      setLoading(false);
-    };
-    if (!loading && heroes.length === 0) {
-      load50Heroes();
-    }
-  }, []);
+  const { loading, heroes } = useLoadInitHeroes();
 
   return (
     <div className="marvel-body">
@@ -42,6 +23,7 @@ const MainPage = () => {
                   name={hero.name}
                   picture={picture}
                   description={hero.description}
+                  comics={hero.comics}
                 />
               </div>
             );

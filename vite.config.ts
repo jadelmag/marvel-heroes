@@ -69,6 +69,7 @@ export default defineConfig({
         "**/constants/**",
         "**/modules/**",
         "**/cypress/**",
+        "cypress.config.js",
       ], // Excluye los archivos con extensión .stories.ts del coverage
     },
   },

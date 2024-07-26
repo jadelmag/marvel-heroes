@@ -2,6 +2,6 @@
   margin: 12px 0px;
 
   span {
-    color: #000 !important;
+    color: var(--dark-color) !important;
   }
 }

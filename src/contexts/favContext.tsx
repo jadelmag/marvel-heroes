@@ -1,3 +1,4 @@
+import { Comics } from "@/modules/hero/hero.interface";
 import React, {
   PropsWithChildren,
   createContext,
@@ -11,6 +12,7 @@ export interface FavHero {
   name: string;
   picture: string;
   description: string;
+  comics: Comics;
 }
 
 export interface FavState {

@@ -6,7 +6,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    background-color: var(--dark-color);
     position: relative;
 
     .detail-page-container {
@@ -14,7 +14,7 @@
       align-items: center;
       justify-content: center;
       width: 960px;
-      height: 320px;
+      min-height: 320px;
 
       img {
         width: 320px;
@@ -25,6 +25,7 @@
         display: flex;
         flex-direction: column;
         margin-left: 48px;
+        height: inherit;
 
         button {
           all: unset;
@@ -40,7 +41,7 @@
             font-weight: 700 !important;
             font-size: 32px !important;
             line-height: 37.5px;
-            color: #fff !important;
+            color: var(--white-color) !important;
           }
 
           svg {
@@ -50,7 +51,7 @@
 
         .detail-page-description {
           margin-top: 24px;
-          color: #fff !important;
+          color: var(--white-color) !important;
         }
       }
     }
@@ -76,7 +77,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: #000;
+    background-color: var(--dark-color);
     position: relative;
 
     .detail-page-container {
@@ -84,7 +85,7 @@
       align-items: center;
       justify-content: center;
       width: 834px;
-      height: 278px;
+      min-height: 278px;
 
       img {
         width: 278px;
@@ -95,6 +96,7 @@
         display: flex;
         flex-direction: column;
         padding: 0px 48px;
+        height: inherit;
 
         button {
           all: unset;
@@ -110,7 +112,7 @@
             font-weight: 700 !important;
             font-size: 32px !important;
             line-height: 37.5px;
-            color: #fff !important;
+            color: var(--white-color) !important;
           }
 
           svg {
@@ -120,7 +122,7 @@
 
         .detail-page-description {
           margin-top: 24px;
-          color: #fff !important;
+          color: var(--white-color) !important;
         }
       }
     }
@@ -135,6 +137,12 @@
         height: 24px;
       }
     }
+  }
+}
+
+@media (width > 393px) and (width <=650px) {
+  .detail-page-description {
+    display: none;
   }
 }
 
