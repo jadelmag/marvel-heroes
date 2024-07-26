@@ -31,6 +31,7 @@ describe("HeroCard Component", () => {
           name={hero.name}
           description={hero.description}
           picture={hero.picture}
+          comics={null}
         />
       </BrowserRouter>
     );
@@ -53,6 +54,7 @@ describe("HeroCard Component", () => {
           name={hero.name}
           description={hero.description}
           picture={hero.picture}
+          comics={null}
         />
       </BrowserRouter>
     );

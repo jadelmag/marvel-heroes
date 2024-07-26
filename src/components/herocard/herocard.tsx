@@ -10,7 +10,7 @@ export interface HeroCardProps {
   name: string;
   picture: string;
   description: string;
-  comics: Comics;
+  comics: Comics | null;
 }
 
 const HeroCard: React.FC<HeroCardProps> = ({

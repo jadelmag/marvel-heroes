@@ -10,7 +10,7 @@ export interface HeartProps {
   name?: string;
   picture?: string;
   description?: string;
-  comics: Comics;
+  comics?: Comics | null;
 }
 
 const Heart: React.FC<HeartProps> = ({
@@ -30,7 +30,7 @@ const Heart: React.FC<HeartProps> = ({
         name: name,
         picture: picture,
         description: description ?? "",
-        comics: comics,
+        comics: comics ?? null,
       };
       const index = favs.findIndex((f: FavHero) => f.id === id);
       if (index === -1) {

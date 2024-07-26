@@ -12,7 +12,7 @@ export interface FavHero {
   name: string;
   picture: string;
   description: string;
-  comics: Comics;
+  comics: Comics | null;
 }
 
 export interface FavState {

@@ -15,7 +15,6 @@
 
 body {
   margin: 0px !important;
-  overflow: hidden;
 }
 
 span {
@@ -38,7 +37,7 @@ h3 {
 }
 
 .marvel {
-  overflow-x: hidden;
+  overflow: hidden;
 
   .marvel-body {
     padding: 24px 16px;

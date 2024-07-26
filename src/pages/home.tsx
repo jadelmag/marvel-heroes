@@ -28,6 +28,7 @@ const HomePage = () => {
                     name={hero.name}
                     picture={picture}
                     description={hero.description}
+                    comics={hero.comics}
                   />
                 </div>
               );

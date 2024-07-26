@@ -19,6 +19,7 @@ const FavsPage = () => {
                   name={fav.name}
                   picture={fav.picture}
                   description={fav.description}
+                  comics={fav.comics}
                 />
               </div>
             );
