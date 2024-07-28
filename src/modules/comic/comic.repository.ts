@@ -4,8 +4,8 @@ import { ComicResponse } from "@/modules/comic/comic.response.interface";
 import { http } from "@/modules/http";
 
 export const comicRepository = {
-  getComic: async (fullUrl: string) => {
-    const comics: ComicDto[] = (await http.get<ComicResponse>(fullUrl)).data
+  getComic: async (fullUrl: string, signal: AbortSignal) => {
+    const comics: ComicDto[] = (await http.get<ComicResponse>(fullUrl, signal)).data
       .results;
     if (comics.length === 0) return [];
     return comics.map(

@@ -5,10 +5,13 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
+import { TypingProvider } from "@/contexts/typingContext";
 import { router } from "@/router/router";
 import { RouterProvider } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
+  <TypingProvider>
+
   <LoaderProvider>
     <HeroesProvider>
       <FavsProvider>
@@ -18,4 +21,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       </FavsProvider>
     </HeroesProvider>
   </LoaderProvider>
+  </TypingProvider>
 );

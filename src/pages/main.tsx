@@ -5,6 +5,7 @@ import { useLoadInitHeroes } from "@/hooks/useLoadInitHeroes";
 import { Hero } from "@/modules/hero/hero.interface";
 
 const MainPage = () => {
+
   const { loading, heroes } = useLoadInitHeroes();
 
   return (

@@ -4,8 +4,8 @@ import { Response } from "@/modules/hero/hero.response.interface";
 import { http } from "@/modules/http";
 
 export const heroRepository = {
-  getHeroes: async (fullUrl: string) => {
-    const heroes: HeroDTO[] = (await http.get<Response>(fullUrl)).data.results;
+  getHeroes: async (fullUrl: string, signal: AbortSignal) => {
+    const heroes: HeroDTO[] = (await http.get<Response>(fullUrl, signal)).data.results;
     if (heroes.length === 0) return [];
     return heroes.map(
       (heroDto): Hero => ({

@@ -1,25 +1,38 @@
 import { useHeroes } from "@/contexts/heroContext";
 import { useLoader } from "@/contexts/loaderContext";
 import { heroService } from "@/modules/hero/hero.service";
-import { useCallback } from "react";
+import { useCallback, useRef } from "react";
 
 export const useFindHero = () => {
   const { setHeroes } = useHeroes();
-  const { setLoading } = useLoader();
+  const { loading, setLoading } = useLoader();
+  const abortControllerRef = useRef<AbortController | null>(null);
 
   const fetchFindHero = useCallback(async (url: string) => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+    }
+
+    const controller = new AbortController();
+    abortControllerRef.current = controller;
+    const { signal } = controller;
+
     try {
       setHeroes([]);
       setLoading(true);
-
-      const heroes = await heroService.getHeroes(url);
+      const heroes = await heroService.getHeroes(url, signal);
       setHeroes(heroes);
-    } catch (ex) {
-      console.error(ex);
+    } catch (error) {
+      setHeroes([]);
     } finally {
       setLoading(false);
     }
-  }, []);
+    return () => {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
+  }, [setHeroes, setLoading]);
 
-  return { fetchFindHero };
+  return { loading, fetchFindHero };
 };

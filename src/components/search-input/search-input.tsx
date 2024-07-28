@@ -1,7 +1,8 @@
 import SearchIcon from "@/assets/svg/icon-search.svg";
+import { useTyping } from "@/contexts/typingContext";
 import { createURL } from "@/functions/url.functions";
 import { useFindHero } from "@/hooks/useFindHero";
-import { useState } from "react";
+import { LegacyRef, useRef, useState } from "react";
 import "./search-input.css";
 
 export interface SearchInputProps {
@@ -11,11 +12,20 @@ export interface SearchInputProps {
 
 const SearchInput = ({ type = "text", placeholder = "" }: SearchInputProps) => {
   const { fetchFindHero } = useFindHero();
-  const [searchValue, setSearchValue] = useState<string>("");
+  const { setTyping } = useTyping();
+  const refValue: LegacyRef<HTMLInputElement> | undefined = useRef(null);
+  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
-  const onHandleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = (event.target as HTMLInputElement).value;
-    setSearchValue(value);
+
+  const onHandleSearch = () => {
+    setTyping(true);
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    const id = setTimeout(() => {
+      fetchHero();
+    }, 1000);
+    setTimeoutId(id);
   };
 
   const onHandleKeyPress = async (
@@ -23,18 +33,23 @@ const SearchInput = ({ type = "text", placeholder = "" }: SearchInputProps) => {
   ) => {
     event.preventDefault();
     if (event.key === "Enter") {
-      const url = createURL(searchValue);
-      fetchFindHero(url);
+      fetchHero();
     }
+  };
+
+  const fetchHero = () => {
+    if (!refValue || !refValue.current || !refValue.current.value) return;
+    const url = createURL(refValue.current.value);
+    fetchFindHero(url);
   };
 
   return (
     <div className="search-input">
       <SearchIcon />
       <input
+        ref={refValue}
         type={type}
         placeholder={placeholder}
-        value={searchValue}
         onChange={onHandleSearch}
         onKeyUp={onHandleKeyPress}
       />
