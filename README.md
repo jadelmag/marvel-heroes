@@ -2,7 +2,7 @@
 
 ## Netlify
 
-[marvel-heroes](https://66a396965c5cd92ad4578a1b--bucolic-melba-4c931f.netlify.app/)
+[marvel-heroes](https://66a6419502b89e2d6400916f--sweet-cheesecake-de06bb.netlify.app/)
 
 ## Instalación
 
