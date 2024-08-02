@@ -3,6 +3,7 @@ import { HeroesProvider } from "@/contexts/heroContext";
 import { LoaderProvider } from "@/contexts/loaderContext";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "./fonts.css";
 import "./index.css";
 
 import { TypingProvider } from "@/contexts/typingContext";
