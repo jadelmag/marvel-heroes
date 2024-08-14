@@ -1,0 +1,57 @@
+.ui-mobile-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  padding: 0px;
+  margin: 0px;
+  height: max-content;
+  position: relative;
+
+  &__img {
+    width: 100%;
+    height: fit-content;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 32px);
+    padding: 24px 16px;
+    min-height: 210px;
+    height: auto;
+
+    &__heart {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__name {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 37.5px;
+        color: #fff;
+      }
+
+      &__icon {
+        all: unset;
+        cursor: pointer;
+      }
+    }
+
+    &__description {
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 18.75px;
+      color: #fff;
+      margin-top: 24px;
+    }
+  }
+
+  &__cuticon {
+    position: absolute;
+    right: 0px;
+    bottom: -8px;
+  }
+}

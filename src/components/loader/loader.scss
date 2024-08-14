@@ -1,0 +1,12 @@
+.ui-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../sass/main.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;
+  padding: 16px !important;
+
+  @include md {
+    padding: 16px 48px !important;
+  }
+
+  &__button {
+    all: unset;
+
+    &__icon {
+      cursor: pointer;
+    }
+  }
+}

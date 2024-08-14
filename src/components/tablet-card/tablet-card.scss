@@ -1,0 +1,54 @@
+.ui-tablet-card {
+  display: flex;
+  background-color: #000;
+  width: 100%;
+  height: fit-content;
+  position: relative;
+
+  &__img {
+    width: 278px;
+    height: fit-content;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 96px);
+    padding: 79.5px 48px;
+    height: calc(100% - 159px);
+
+    &__heart {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__title {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 37.5px;
+        color: #fff;
+      }
+
+      &__description {
+        margin-top: 24px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 18.75px;
+        color: #fff;
+      }
+
+      &__icon {
+        all: unset;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__cut-icon {
+    position: absolute;
+    right: 0px;
+    bottom: -8px;
+  }
+}

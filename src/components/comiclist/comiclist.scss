@@ -1,0 +1,23 @@
+.ui-comic-list {
+  display: flex;
+  overflow-x: auto;
+
+  &__cover {
+    width: 179.2px;
+    height: 340.8px;
+    margin-right: 16px;
+
+    &__image {
+      width: 179.2px;
+      height: 268.8px;
+    }
+
+    &__title {
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 18.75px;
+      color: #000;
+    }
+  }
+}

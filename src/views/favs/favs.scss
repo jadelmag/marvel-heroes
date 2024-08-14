@@ -1,0 +1,48 @@
+@import "../../sass/main.scss";
+
+.ui-favs-page {
+  width: calc(100% - 32px);
+  padding: 0px 16px;
+  height: 100%;
+  margin-top: 24px !important;
+
+  @include md {
+    width: calc(100% - 96px);
+    padding: 12px 48px;
+    margin-top: 48px !important;
+  }
+
+  &__title {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28.13px;
+    color: #000;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+
+    @include sm {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include md {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include lg {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    @include xl {
+      grid-template-columns: repeat(7, 1fr);
+    }
+
+    @include xxl {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+}

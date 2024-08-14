@@ -1,0 +1,31 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin: 24px 0px;
+
+  &__box {
+    background-color: #fff !important;
+
+    &__textfield {
+      background-color: #fff !important;
+
+      > div {
+        background-color: #fff !important;
+
+        &:hover {
+          background-color: #fff !important;
+        }
+      }
+    }
+
+    &__results {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 16px 0px;
+    }
+  }
+}
